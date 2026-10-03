@@ -246,3 +246,11 @@ class Approval(models.Model):
     
     def __str__(self):
         return f"{self.stock_out} - {self.get_status_display()}"
+
+
+# 移交单位与准入管理模型（TransferUnit/AccessGrant/EmergencyPermit 等）
+# 放在文件末尾导入：access_models 依赖本模块中的 Category、Goods。
+from .access_models import (  # noqa: E402,F401
+    TransferUnit, UnitNameChange, AccessGrant, EmergencyPermit,
+    ReturnApproval, CustodyTransfer,
+)
